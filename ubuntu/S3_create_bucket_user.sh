@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # MinIO server endpoint
-MINIO_ENDPOINT="http://localhost:9000"
+MINIO_ENDPOINT="http://minio1:9000"
 # Alias for MinIO server
 MINIO_ALIAS="minioadmin"
 # Username for the new user
@@ -11,7 +11,7 @@ PASSWORD="splitamoung"
 # Bucket name
 BUCKETNAME="splitamoung"
 
-mc alias set minioadmin http://localhost:9000 minioadmin minioadmin
+mc alias set minioadmin http://minio1:9000 minioadmin minioadmin
 
 
 # Create bucket
@@ -43,3 +43,4 @@ mc admin policy create ${MINIO_ALIAS} readwrite-policy policy.json
 mc admin policy attach ${MINIO_ALIAS} readwrite-policy --user=${USERNAME}
 
 echo "User '${USERNAME}' has been added and granted read/write permissions to bucket '${BUCKETNAME}'."
+
