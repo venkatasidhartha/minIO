@@ -62,16 +62,16 @@ services:
       - minio3
       - minio4
   
-  scripter:
-    build:
-      context: ./ubuntu
-      dockerfile: Dockerfile
-    # command: sleep infinity 
-    depends_on:
-      - minio1
-      - minio2
-      - minio3
-      - minio4
+  # scripter:
+  #   build:
+  #     context: ./ubuntu
+  #     dockerfile: Dockerfile
+  #   # command: sleep infinity 
+  #   depends_on:
+  #     - minio1
+  #     - minio2
+  #     - minio3
+  #     - minio4
     # run S3_create_bucket_user.sh script manually 
     # docker exec -it minio_scripter_1 bash 
     # ./S3_create_bucket_user.sh
